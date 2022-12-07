@@ -1,3 +1,5 @@
+from pynwb import NWBFile
+
 from allensdk.core import DataObject
 from allensdk.core import \
     LimsReadableInterface
