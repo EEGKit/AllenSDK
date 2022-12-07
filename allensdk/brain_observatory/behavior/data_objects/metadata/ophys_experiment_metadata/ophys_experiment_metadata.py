@@ -22,7 +22,7 @@ class OphysExperimentMetadata(DataObject, LimsReadableInterface,
                  field_of_view_shape: FieldOfViewShape,
                  imaging_depth: ImagingDepth,
                  targeted_imaging_depth: TargetedImagingDepth,
-                 projectd_id: Optional[ProjectCode] = None):
+                 projectd_id: Optional[ProjectId] = None):
         super().__init__(name='ophys_experiment_metadata', value=None,
                          is_value_self=True)
         self._ophys_experiment_id = ophys_experiment_id
