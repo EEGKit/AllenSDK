@@ -92,6 +92,10 @@ class BehaviorMetadataSchema(RaisingSchema):
         doc='Name of behavior or optical physiology experiment rig',
         required=True,
     )
+    project_id = fields.Int(
+        doc='Id of project associated with session.',
+        required=False,
+    )
 
 
 class NwbOphysMetadataSchema(RaisingSchema):
@@ -175,6 +179,10 @@ class OphysMetadataSchema(NwbOphysMetadataSchema):
              'for a mesoscope experiment. Will be 0 if the scope did not '
              'capture multiple concurrent imaging planes.'),
         required=True
+    )
+    project_id = fields.Int(
+        doc='Id of project associated with session.',
+        required=False,
     )
 
 

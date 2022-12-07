@@ -6,7 +6,7 @@ from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_
 from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.ophys_container_id import OphysContainerId  # NOQA
 from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.ophys_experiment_metadata import OphysExperimentMetadata  # NOQA
 from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.ophys_session_id import OphysSessionId  # NOQA
-from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.project_code import ProjectCode  # NOQA
+from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.ophys_project_id import OphysProjectId  # NOQA
 from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.targeted_imaging_depth import TargetedImagingDepth  # NOQA
 from allensdk.internal.api import PostgresQueryMixin
 
@@ -20,7 +20,7 @@ class MultiplaneMetadata(OphysExperimentMetadata):
                  imaging_depth: ImagingDepth,
                  targeted_imaging_depth: TargetedImagingDepth,
                  imaging_plane_group: ImagingPlaneGroup,
-                 project_code: ProjectCode):
+                 project_id: OphysProjectId):
         super().__init__(
             ophys_experiment_id=ophys_experiment_id,
             ophys_session_id=ophys_session_id,
@@ -28,7 +28,7 @@ class MultiplaneMetadata(OphysExperimentMetadata):
             field_of_view_shape=field_of_view_shape,
             imaging_depth=imaging_depth,
             targeted_imaging_depth=targeted_imaging_depth,
-            project_code=project_code
+            project_id=project_id
         )
         self._imaging_plane_group = imaging_plane_group
 
@@ -47,7 +47,7 @@ class MultiplaneMetadata(OphysExperimentMetadata):
             field_of_view_shape=ophys_experiment_metadata._field_of_view_shape,
             imaging_depth=ophys_experiment_metadata._imaging_depth,
             targeted_imaging_depth=ophys_experiment_metadata._targeted_imaging_depth,  # noqa E501
-            project_code=ophys_experiment_metadata._project_code,
+            project_id=ophys_experiment_metadata.project_id,
             imaging_plane_group=imaging_plane_group
         )
 
@@ -62,7 +62,7 @@ class MultiplaneMetadata(OphysExperimentMetadata):
             field_of_view_shape=ophys_experiment_metadata._field_of_view_shape,
             imaging_depth=ophys_experiment_metadata._imaging_depth,
             targeted_imaging_depth=ophys_experiment_metadata._targeted_imaging_depth,  # noqa E501
-            project_code=ophys_experiment_metadata._project_code,
+            project_id=ophys_experiment_metadata.project_id,
             imaging_plane_group=imaging_plane_group
         )
 
@@ -77,7 +77,7 @@ class MultiplaneMetadata(OphysExperimentMetadata):
             field_of_view_shape=ophys_experiment_metadata._field_of_view_shape,
             imaging_depth=ophys_experiment_metadata._imaging_depth,
             targeted_imaging_depth=ophys_experiment_metadata._targeted_imaging_depth,  # noqa E501
-            project_code=ophys_experiment_metadata._project_code,
+            project_id=ophys_experiment_metadata.project_id,
             imaging_plane_group=imaging_plane_group
         )
 

@@ -60,6 +60,13 @@ class BehaviorOphysMetadata(DataObject, LimsReadableInterface,
             ophys_metadata = OphysExperimentMetadata.from_lims(
                 ophys_experiment_id=ophys_experiment_id, lims_db=lims_db)
 
+        if ophys_metadata.project_id != behavior_metadata:
+            raise ValueError(
+                'Project id for Ophys experiment table does not match '
+                'id from behavior_session table for ophys_experiment_id='
+                f'{ophys_experiment_id} with behavior_session_id='
+                f'{behavior_session_id}. Exiting.')
+
         return cls(behavior_metadata=behavior_metadata,
                    ophys_metadata=ophys_metadata)
 
@@ -147,7 +154,8 @@ class BehaviorOphysMetadata(DataObject, LimsReadableInterface,
             imaging_depth=ophys_meta.imaging_depth,
             targeted_imaging_depth=ophys_meta.targeted_imaging_depth,
             behavior_session_uuid=str(behavior_meta.behavior_session_uuid),
-            behavior_session_id=behavior_meta.behavior_session_id
+            behavior_session_id=behavior_meta.behavior_session_id,
+            project_id=ophys_meta.project_id,
         )
         nwbfile.add_lab_meta_data(nwb_metadata)
 
