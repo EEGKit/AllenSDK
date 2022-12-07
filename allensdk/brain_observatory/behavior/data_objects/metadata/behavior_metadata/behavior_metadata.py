@@ -245,7 +245,8 @@ class BehaviorMetadata(DataObject, LimsReadableInterface,
                       stimulus_file=stimulus_file)
 
         project_id = ProjectId.from_lims(
-            behavior_session_id=behavior_session_id.value)
+            behavior_session_id=behavior_session_id.value,
+            lims_db=lims_db)
 
         return BehaviorMetadata(
             date_of_acquisition=date_of_acquisition,
