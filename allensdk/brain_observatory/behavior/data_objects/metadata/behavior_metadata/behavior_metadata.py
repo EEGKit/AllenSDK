@@ -27,6 +27,9 @@ from allensdk.brain_observatory.behavior.data_objects.metadata\
     .behavior_metadata.foraging_id import \
     ForagingId
 from allensdk.brain_observatory.behavior.data_objects.metadata\
+    .behavior_metadata.project_id import \
+    ProjectId
+from allensdk.brain_observatory.behavior.data_objects.metadata\
     .behavior_metadata.session_type import \
     SessionType
 from allensdk.brain_observatory.behavior.data_objects.metadata\
