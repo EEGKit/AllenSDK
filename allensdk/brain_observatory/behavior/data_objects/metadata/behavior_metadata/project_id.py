@@ -4,9 +4,10 @@ from allensdk.core import DataObject
 from allensdk.core import \
     LimsReadableInterface
 from allensdk.internal.api import PostgresQueryMixin
+from allensdk.core import NwbReadableInterface
 
 
-class ProjectId(DataObject, LimsReadableInterface):
+class ProjectId(DataObject, LimsReadableInterface, NwbReadableInterface):
     def __init__(self, project_id: int):
         super().__init__(name='project_id', value=project_id)
 
