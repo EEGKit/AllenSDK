@@ -183,7 +183,8 @@ class OphysMetadataSchema(NwbOphysMetadataSchema):
     )
     project_id = fields.Int(
         doc='Id of project associated with session.',
-        required=False,
+        allow_none=True,
+        required=True,
     )
 
 

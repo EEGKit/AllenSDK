@@ -47,7 +47,7 @@ class MultiplaneMetadata(OphysExperimentMetadata):
             field_of_view_shape=ophys_experiment_metadata._field_of_view_shape,
             imaging_depth=ophys_experiment_metadata._imaging_depth,
             targeted_imaging_depth=ophys_experiment_metadata._targeted_imaging_depth,  # noqa E501
-            project_id=ophys_experiment_metadata.project_id,
+            project_id=ophys_experiment_metadata._project_id,
             imaging_plane_group=imaging_plane_group
         )
 
@@ -62,7 +62,7 @@ class MultiplaneMetadata(OphysExperimentMetadata):
             field_of_view_shape=ophys_experiment_metadata._field_of_view_shape,
             imaging_depth=ophys_experiment_metadata._imaging_depth,
             targeted_imaging_depth=ophys_experiment_metadata._targeted_imaging_depth,  # noqa E501
-            project_id=ophys_experiment_metadata.project_id,
+            project_id=ophys_experiment_metadata._project_id,
             imaging_plane_group=imaging_plane_group
         )
 
@@ -77,7 +77,7 @@ class MultiplaneMetadata(OphysExperimentMetadata):
             field_of_view_shape=ophys_experiment_metadata._field_of_view_shape,
             imaging_depth=ophys_experiment_metadata._imaging_depth,
             targeted_imaging_depth=ophys_experiment_metadata._targeted_imaging_depth,  # noqa E501
-            project_id=ophys_experiment_metadata.project_id,
+            project_id=ophys_experiment_metadata._project_id,
             imaging_plane_group=imaging_plane_group
         )
 

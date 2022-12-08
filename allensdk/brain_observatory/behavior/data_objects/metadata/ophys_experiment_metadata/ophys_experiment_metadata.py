@@ -22,7 +22,7 @@ class OphysExperimentMetadata(DataObject, LimsReadableInterface,
                  field_of_view_shape: FieldOfViewShape,
                  imaging_depth: ImagingDepth,
                  targeted_imaging_depth: TargetedImagingDepth,
-                 projectd_id: Optional[OphysProjectId] = None):
+                 project_id: Optional[OphysProjectId] = None):
         super().__init__(name='ophys_experiment_metadata', value=None,
                          is_value_self=True)
         self._ophys_experiment_id = ophys_experiment_id
@@ -31,7 +31,7 @@ class OphysExperimentMetadata(DataObject, LimsReadableInterface,
         self._field_of_view_shape = field_of_view_shape
         self._imaging_depth = imaging_depth
         self._targeted_imaging_depth = targeted_imaging_depth
-        self._projectd_id = projectd_id
+        self._project_id = project_id
 
         self._exclude_from_equals = ()
 
@@ -59,7 +59,7 @@ class OphysExperimentMetadata(DataObject, LimsReadableInterface,
             field_of_view_shape=field_of_view_shape,
             imaging_depth=imaging_depth,
             targeted_imaging_depth=targeted_imaging_depth,
-            projectd_id=projectd_id
+            project_id=project_id
         )
 
     @classmethod
@@ -93,6 +93,7 @@ class OphysExperimentMetadata(DataObject, LimsReadableInterface,
         imaging_depth = ImagingDepth.from_nwb(nwbfile=nwbfile)
         targeted_imaging_depth = TargetedImagingDepth.from_nwb(
             nwbfile=nwbfile)
+        project_id = OphysProjectId.from_nwb(nwbfile=nwbfile)
 
         return OphysExperimentMetadata(
             ophys_experiment_id=ophys_experiment_id,
@@ -100,7 +101,8 @@ class OphysExperimentMetadata(DataObject, LimsReadableInterface,
             ophys_container_id=ophys_container_id,
             field_of_view_shape=field_of_view_shape,
             imaging_depth=imaging_depth,
-            targeted_imaging_depth=targeted_imaging_depth
+            targeted_imaging_depth=targeted_imaging_depth,
+            project_id=project_id
         )
 
     @property
@@ -140,9 +142,9 @@ class OphysExperimentMetadata(DataObject, LimsReadableInterface,
         return self._ophys_session_id.value
 
     @property
-    def projectd_id(self) -> Optional[int]:
-        if self._projectd_id is None:
-            pc = self._projectd_id
+    def project_id(self) -> Optional[int]:
+        if self._project_id is None:
+            pc = self._project_id
         else:
-            pc = self._projectd_id.value
+            pc = self._project_id.value
         return pc

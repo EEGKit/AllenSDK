@@ -60,7 +60,7 @@ class BehaviorOphysMetadata(DataObject, LimsReadableInterface,
             ophys_metadata = OphysExperimentMetadata.from_lims(
                 ophys_experiment_id=ophys_experiment_id, lims_db=lims_db)
 
-        if ophys_metadata.project_id != behavior_metadata:
+        if ophys_metadata.project_id != behavior_metadata.project_id:
             raise ValueError(
                 'Project id for Ophys experiment table does not match '
                 'id from behavior_session table for ophys_experiment_id='

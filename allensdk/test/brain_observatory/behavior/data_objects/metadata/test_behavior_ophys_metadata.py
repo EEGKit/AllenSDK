@@ -15,6 +15,7 @@ from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_
 from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.ophys_container_id import OphysContainerId  # NOQA
 from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.ophys_experiment_metadata import OphysExperimentMetadata  # NOQA
 from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.ophys_session_id import OphysSessionId  # NOQA
+from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.ophys_project_id import OphysProjectId  # NOQA
 from allensdk.brain_observatory.behavior.data_objects.metadata.ophys_experiment_metadata.targeted_imaging_depth import TargetedImagingDepth  # NOQA
 from allensdk.core.auth_config import LIMS_DB_CREDENTIAL_MAP
 from allensdk.internal.api import db_connection_creator
@@ -39,7 +40,8 @@ class TestBOM:
             field_of_view_shape=FieldOfViewShape(width=4, height=4),
             imaging_depth=ImagingDepth(imaging_depth=375),
             targeted_imaging_depth=TargetedImagingDepth(
-                targeted_imaging_depth=375)
+                targeted_imaging_depth=375),
+            project_id=OphysProjectId(1234)
         )
 
         behavior_metadata = TestBehaviorMetadata()
@@ -65,7 +67,7 @@ class TestBOM:
             imaging_depth=ophys_experiment_metadata._imaging_depth,
             targeted_imaging_depth=ophys_experiment_metadata.
             _targeted_imaging_depth,
-            project_code=ophys_experiment_metadata._project_code,
+            project_id=ophys_experiment_metadata._project_id,
             imaging_plane_group=imaging_plane_group
         )
         return BehaviorOphysMetadata(
