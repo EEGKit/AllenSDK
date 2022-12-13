@@ -419,7 +419,7 @@ class BehaviorOphysExperiment(BehaviorSession):
             'ophys_frame_rate':
                 self._cell_specimens.meta.imaging_plane.ophys_frame_rate,
             'ophys_session_id': self._metadata.ophys_metadata.ophys_session_id,
-            'project_code': self._metadata.ophys_metadata.project_code,
+            'project_id': self._metadata.ophys_metadata.project_id,
             'targeted_structure':
                 self._cell_specimens.meta.imaging_plane.targeted_structure
         }
