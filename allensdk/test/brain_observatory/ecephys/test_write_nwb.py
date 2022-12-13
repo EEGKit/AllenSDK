@@ -754,7 +754,8 @@ def test_write_probe_lfp_file(tmpdir_factory, lfp_data, probe_data, csd_data):
         "sex": "M",
         "stimulus_name": "test_stim",
         "species": "Mus musculus",
-        "donor_id": 42
+        "donor_id": 42,
+        "project_id": 1234,
     }
 
     def dummy_meta_from_json(dict_repr):

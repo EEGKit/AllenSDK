@@ -51,7 +51,7 @@ class BehaviorEcephysMetadata(BehaviorMetadata, JsonReadableInterface,
             equipment=equipment,
             session_type=session_type,
             stimulus_frame_rate=stimulus_frame_rate,
-            project_id=ProjectId,
+            project_id=project_id,
         )
         self._ecephys_session_id = ecephys_session_id
 
