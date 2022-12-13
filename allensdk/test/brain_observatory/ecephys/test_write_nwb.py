@@ -54,6 +54,10 @@ from allensdk.brain_observatory.behavior.data_objects.metadata\
     .behavior_metadata.behavior_session_uuid import \
     BehaviorSessionUUID
 
+from allensdk.brain_observatory.behavior.data_objects.metadata\
+    .behavior_metadata.project_id import \
+    ProjectId
+
 from allensdk.brain_observatory.behavior.data_objects import BehaviorSessionId
 from allensdk.brain_observatory.behavior.data_objects.metadata\
     .subject_metadata.subject_metadata import \
@@ -763,6 +767,7 @@ def test_write_probe_lfp_file(tmpdir_factory, lfp_data, probe_data, csd_data):
             equipment=Equipment('foo'),
             session_type=SessionType('foo'),
             stimulus_frame_rate=StimulusFrameRate(1.0),
+            project_id=ProjectId(1234),
             subject_metadata=SubjectMetadata(
                 sex=Sex(dict_repr['sex']),
                 age=Age(1),
