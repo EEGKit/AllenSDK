@@ -41,7 +41,7 @@ class BehaviorEcephysMetadata(BehaviorMetadata, JsonReadableInterface,
             equipment: Equipment,
             session_type: SessionType,
             stimulus_frame_rate: StimulusFrameRate,
-            project_id: Optional[ProjectId] = None,
+            project_id: Optional[ProjectId] = ProjectId(-1),
     ):
         super().__init__(
             date_of_acquisition=date_of_acquisition,

@@ -28,4 +28,4 @@ class ProjectId(DataObject, LimsReadableInterface, NwbReadableInterface):
             metadata = nwbfile.lab_meta_data['metadata']
             return cls(project_id=metadata.project_id)
         except AttributeError:
-            return None
+            return cls(project_id=-1)

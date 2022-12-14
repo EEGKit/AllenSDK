@@ -195,7 +195,7 @@ class BehaviorMetadata(DataObject, LimsReadableInterface,
                  stimulus_frame_rate: StimulusFrameRate,
                  session_type: SessionType,
                  behavior_session_uuid: BehaviorSessionUUID,
-                 project_id: Optional[ProjectId] = None,
+                 project_id: Optional[ProjectId] = ProjectId(-1),
                  session_duration: Optional[float] = None
                  ):
         super().__init__(name='behavior_metadata', value=None,
@@ -285,7 +285,7 @@ class BehaviorMetadata(DataObject, LimsReadableInterface,
             session_type=session_type,
             behavior_session_uuid=session_uuid,
             session_duration=stimulus_file.session_duration,
-            project_id=None,
+            project_id=ProjectId(-1),
         )
 
     @classmethod
