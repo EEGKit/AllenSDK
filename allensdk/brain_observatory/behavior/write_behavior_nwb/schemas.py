@@ -30,6 +30,9 @@ class BaseBehaviorSessionDataSchema(RaisingSchema):
                                  description=("Date of acquisition of "
                                               "behavior session, in string "
                                               "format"))
+    project_id = Int(required=True,
+                     allow_none=True,
+                     description="Unique id of project session belongs to.")
     external_specimen_name = Int(required=True,
                                  description='LabTracks ID of the subject')
     behavior_stimulus_file = argschema.fields.InputFile(
