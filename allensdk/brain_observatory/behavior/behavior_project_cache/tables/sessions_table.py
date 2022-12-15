@@ -33,9 +33,12 @@ from allensdk.core.auth_config import LIMS_DB_CREDENTIAL_MAP
 from allensdk.internal.api import db_connection_creator
 from allensdk.internal.brain_observatory.util.multi_session_utils import \
     multiprocessing_helper
+from allensdk.brain_observatory.behavior.behavior_project_cache.tables\
+    .ophys_mixin import \
+    OphysMixin
 
 
-class SessionsTable(ProjectTable):
+class SessionsTable(ProjectTable, OphysMixin):
     """Class for storing and manipulating project-level data
     at the session level"""
 
