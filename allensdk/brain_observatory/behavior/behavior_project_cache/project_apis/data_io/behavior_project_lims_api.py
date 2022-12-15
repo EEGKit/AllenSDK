@@ -312,7 +312,7 @@ class BehaviorProjectLimsApi(BehaviorProjectBase):
         Return a pd.Dataframe table with all ophys_experiment_ids and relevant
         metadata.
         Return columns: ophys_session_id, behavior_session_id,
-                        ophys_experiment_id, project_code, session_name,
+                        ophys_experiment_id, project_id, session_name,
                         session_type, equipment_name, date_of_acquisition,
                         specimen_id, full_genotype, sex, age_in_days,
                         reporter_line, driver_line
@@ -418,7 +418,7 @@ class BehaviorProjectLimsApi(BehaviorProjectBase):
         Return a pd.Dataframe table with all ophys_session_ids and relevant
         metadata.
         Return columns: ophys_session_id, behavior_session_id, project_id,
-                        ophys_experiment_id, project_code, session_name,
+                        ophys_experiment_id, project_id, session_name,
                         date_of_acquisition,
                         specimen_id, full_genotype, sex, age_in_days,
                         reporter_line, driver_line
@@ -433,7 +433,6 @@ class BehaviorProjectLimsApi(BehaviorProjectBase):
                 imaging_plane_group_count.imaging_plane_group_count,
                 exp_ids.experiment_ids as ophys_experiment_id,
                 cntr_ids.container_ids as ophys_container_id,
-                pr.code as project_code,
                 os.name as session_name,
                 os.date_of_acquisition,
                 os.specimen_id
@@ -460,7 +459,7 @@ class BehaviorProjectLimsApi(BehaviorProjectBase):
         """Return a pd.Dataframe table with all ophys_session_ids and relevant
         metadata.
         Return columns: ophys_session_id, behavior_session_id,
-                        ophys_experiment_id, project_code, session_name,
+                        ophys_experiment_id, project_id, session_name,
                         session_type, equipment_name, date_of_acquisition,
                         specimen_id, full_genotype, sex, age_in_days,
                         reporter_line, driver_line
