@@ -236,6 +236,7 @@ class BehaviorProjectLimsApi(BehaviorProjectBase):
         query = f"""
             SELECT
                 bs.id AS behavior_session_id,
+                bs.project_id as project_id,
                 equipment.name as equipment_name,
                 bs.date_of_acquisition,
                 d.id as donor_id,
@@ -326,7 +327,7 @@ class BehaviorProjectLimsApi(BehaviorProjectBase):
                 oec.visual_behavior_experiment_container_id as
                     ophys_container_id,
                 pg.group_order AS imaging_plane_group,
-                pr.code as project_code,
+                os.project_id as project_id,
                 vbc.workflow_state as container_workflow_state,
                 oe.workflow_state as experiment_workflow_state,
                 os.name as session_name,
@@ -416,7 +417,7 @@ class BehaviorProjectLimsApi(BehaviorProjectBase):
         """Helper function for easier testing.
         Return a pd.Dataframe table with all ophys_session_ids and relevant
         metadata.
-        Return columns: ophys_session_id, behavior_session_id,
+        Return columns: ophys_session_id, behavior_session_id, project_id,
                         ophys_experiment_id, project_code, session_name,
                         date_of_acquisition,
                         specimen_id, full_genotype, sex, age_in_days,
@@ -428,6 +429,7 @@ class BehaviorProjectLimsApi(BehaviorProjectBase):
             SELECT
                 os.id as ophys_session_id,
                 bs.id as behavior_session_id,
+                os.project_id as project_id,
                 imaging_plane_group_count.imaging_plane_group_count,
                 exp_ids.experiment_ids as ophys_experiment_id,
                 cntr_ids.container_ids as ophys_container_id,
@@ -491,7 +493,7 @@ class BehaviorProjectLimsApi(BehaviorProjectBase):
         level to examine the data.
         Return columns:
             ophys_experiment_id, ophys_session_id, behavior_session_id,
-            ophys_container_id, project_code, container_workflow_state,
+            ophys_container_id, project_id, container_workflow_state,
             experiment_workflow_state, session_name, session_type,
             equipment_name, date_of_acquisition, isi_experiment_id,
             specimen_id, sex, age_in_days, full_genotype, reporter_line,
