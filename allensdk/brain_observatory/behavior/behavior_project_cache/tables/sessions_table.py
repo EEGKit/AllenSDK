@@ -68,7 +68,8 @@ class SessionsTable(ProjectTable, OphysMixin):
         self._fetch_api = fetch_api
         self._ophys_session_table = ophys_session_table
         self._include_trial_metrics = include_trial_metrics
-        super().__init__(df=df, suppress=suppress)
+        ProjectTable.__init__(self, df=df, suppress=suppress)
+        OphysMixin.__init__(self)
 
     def postprocess_additional(self):
         # Add subject metadata
