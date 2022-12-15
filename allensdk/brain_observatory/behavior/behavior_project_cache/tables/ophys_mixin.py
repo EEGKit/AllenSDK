@@ -31,5 +31,5 @@ class OphysMixin:
             self._df['project_id'] = \
                 self._df['project_id_ophys'].astype(int)
             self._df = self._df.drop(
-                ['date_of_acquisition_behavior',
-                 'date_of_acquisition_ophys'], axis=1)
+                ['project_id_ophys',  'project_id_behavior'],
+                axis=1)
